@@ -1,0 +1,43 @@
+body {
+    background-color: #b9995d;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding : 0px 20px;
+}
+
+nav ul{
+    padding: 10px;
+    display: flex;
+    gap: 200px;
+    list-style: none;
+
+    
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.questions-button {
+    background-color: #e3d9d2;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 1px solid black;
+    font-size: 25px;
+    flex-shrink: 0;
+    white-space: nowrap;   /* prevents text from wrapping */
+
+}
+
+.logo-header {
+    width: 100px;
+    height: 100px;
+}
