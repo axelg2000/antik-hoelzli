@@ -113,7 +113,7 @@ header.scrolled-up {
 width: 30%;             /* adjust width */
   margin: 2rem auto;      /* centers the line horizontally */
   border: none;
-    border-top: 4px solid var(--contrast-color); /* adjust color and thickness */
+    border-top: 2px solid var(--contrast-color); /* adjust color and thickness */
     opacity: 1; /* Make sure it's fully opaque */
 
 }
@@ -163,12 +163,13 @@ width: 30%;             /* adjust width */
   }
 
   footer {
-
+    margin-top: 30px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+    justify-content: space-evenly;
+    align-items: baseline;
+    padding: 30px;
     color: white;
+    background-color: var(--contrast-color);
    
 
   }
