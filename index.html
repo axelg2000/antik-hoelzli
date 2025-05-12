@@ -4,31 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Antik Hoelzli</title>
+     <!-- Bootstrap 5 CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/style/styles.css">
+   
+
+    <!-- Optional Bootstrap JS (for dropdowns, modals, etc.) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
     <header>
-        <img src="assets/style/images/logo_holzli.png" alt="Welcome to Antik Hoelzli" class ="logo-header">
+        
         <nav>
-            <ul>
-                <li><a href="#home">Gallerie</a></li>
-                <li><a href="Services">About</a></li>
-                <li><a href="About Us">Contact</a></li>
-                <li><a href="About Us" class ="questions-button">Questions / Quotations</a></li>
-
-            </ul>
+            <div class="logo-header">
+                <img src="assets/style/images/white_hoelzli_logo.png" alt="Welcome to Antik Hoelzli">
+            </div>
+            <div class="nav-item">
+                <a href="#home">Gallerie</a>
+            </div>
+            <div class="nav-item">
+                <a href="services.html">Leistungen</a>
+            </div>
+            <div class="nav-item">
+                <a href="contact.html">Über uns</a>
+            </div>
+            <div class="nav-item">
+                <a href="questions.html" class="questions-button">Fragen und Angebote</a>
+            </div>
         </nav>
     </header>
 
     <main>
-        <h2>Content goes here</h2>
-        <p>This is the main content of the website.</p>
+        <div class="my-carousel-wrapper">
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+        
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  </div>
+                    
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="assets/style/images/furnitures/barockmoebel.jpg" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="assets/style/images/furnitures/image (1).png" alt="Second slide">
+                    </div>
+                </div>
+            </div>
+            <!-- Dot indicators -->
+    
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
+        </div>
+
+        <hr class="line-divider">
+
+
+        <div class="presentation-wrapper">
+
+        <div class="presentation-content">
+            <img src="assets/style/images/worker.png" class="presentation-image" alt="Antique Furniture">
+            
+            <div class="presentation-text right">
+            <h2><i>Möbelrestauration mit Leidenschaft und Präzision</i></h2>
+            <p>Seit über 40 Jahren widmet sich Thomas Hölzli mit höchstem handwerklichem Können der Restauration von Möbeln. 
+                Mit einem geschulten Auge für Details, großer Sorgfalt und tiefem Verständnis für historische Materialien haucht er alten Stücken neues Leben ein. 
+                Wer seine Möbel in seine Hände gibt, vertraut auf Erfahrung, Hingabe und echtes Meisterhandwerk.</p>
+            </div>
+        </div>
+        
+
+
+        <div class="presentation-content">
+            
+            <div class="presentation-text left">
+            <h2><i>Meisterhafte Handarbeit</i></h2>
+            <p>Mit viel Liebe zum Detail – unsere Möbel werden von Hand gefertigt und mit höchster Präzision restauriert. 
+                Jedes Stück ist ein Unikat, das durch echte Handwerkskunst und Sorgfalt zum Leben erweckt wird.</p>
+            </div>
+            <img src="assets/style/images/handwork.png" class="presentation-image" alt="Antique Furniture">
+
+        </div>
+        <div class="presentation-content">
+            <img src="assets/style/images/lieferung.png" class="presentation-image" alt="Antique Furniture">
+            
+            <div class="presentation-text right">
+            <h2><i>Lieferung persönlich & zuverlässig</i>
+            </h2>
+            <p>Ihr restauriertes Möbelstück wird auf Wunsch sicher und persönlich 
+                von Thomas Hölzli selbst geliefert – mit dem gleichen Anspruch an Sorgfalt und Qualität wie bei der Restauration</p>
+            </div>
+        </div>
+    </div>
+
+        </div>
     </main>
+    <hr class="line-divider">
+
+
+    <div class="choice-wrapper">
+        <img src="assets/style/images/girl_bench.png" alt="Background">
+        <div class="buttons-overlay">
+          <button>Gallerie</button>
+          <button>Fragen <br>Angebote </button>
+        </div>
+      </div>
 
     <footer>
-        <p>&copy; 202 Antik Hoelzli. All rights reserved.</p>
+        <div>&copy; 2023 Antik Hoelzli. All rights reserved.</div>
+            <div class="contact-item">
+                <strong>Kontakt:</strong> +49 123 456 789
+            </div>
+            <div class="contact-item">
+                <strong>Adresse:</strong> Musterstraße 1, 12345 Musterstadt, Deutschland
+            </div>
+            <div class="contact-item">
+                <strong>Email:</strong> info@antik-hoelzli.de
+            </div>
+       
     </footer>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
