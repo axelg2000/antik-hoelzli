@@ -19,3 +19,22 @@ window.addEventListener('scroll', () => {
 
   lastScroll = currentScroll;
 });
+
+
+document.getElementById("toggleSlider").addEventListener("click", function () {
+  const sliderContainer = document.getElementById("sliderContainer");
+  sliderContainer.style.display = sliderContainer.style.display === "none" ? "block" : "none";
+});
+
+// Handle slider change
+document.getElementById("priceRange").addEventListener("input", function () {
+  const maxPrice = parseInt(this.value);
+  document.getElementById("priceValue").textContent = maxPrice;
+
+  const items = Array.from(document.querySelectorAll("#itemList li"));
+
+  items.forEach(item => {
+    const itemPrice = parseInt(item.getAttribute("data-price"));
+    item.style.display = itemPrice <= maxPrice ? "list-item" : "none";
+  });
+});
