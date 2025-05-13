@@ -38,3 +38,13 @@ document.getElementById("priceRange").addEventListener("input", function () {
     item.style.display = itemPrice <= maxPrice ? "list-item" : "none";
   });
 });
+
+
+function copyEmail() {
+  const email = "your@email.com";
+  navigator.clipboard.writeText(email).then(() => {
+    alert("Email copied to clipboard!");
+  }).catch(err => {
+    alert("Failed to copy email.");
+  });
+}

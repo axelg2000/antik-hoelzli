@@ -214,6 +214,7 @@ font-size: 100px;
   
 .buttons-overlay a {
     padding: 10px 40px;
+    white-space: nowrap;
     font-size: 1rem;
     border: none;
     background-color: var(--contrast-color);
@@ -370,4 +371,21 @@ font-size: 100px;
   align-self: flex-start; /* override centering for this item */
   margin-left: 20px;      /* optional: push it slightly away from the edge */
   color : var(--contrast-color);
+}
+
+.contact-container{
+  display: flex;
+gap: 40px;
+  align-items: center;
+
+
+}
+
+.google-map {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 600px;
+  height: 450px;
 }
