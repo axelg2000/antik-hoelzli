@@ -4,7 +4,7 @@ const header = document.querySelector('header');
 window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset;
 
-  if (currentScroll <= 10) {
+  if (currentScroll <= 60) {
     // Top of the page: show header, remove background
     header.style.transform = 'translateY(0)';
     header.classList.remove('scrolled-up');
