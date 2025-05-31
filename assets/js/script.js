@@ -47,4 +47,6 @@ function copyEmail() {
   }).catch(err => {
     alert("Failed to copy email.");
   });
-}
+};
+
+
