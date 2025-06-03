@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Home | Antik Hoelzli{% endblock %}
+
+{% block content %}
+<div class="my-carousel-wrapper">
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1500">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'style/images/furnitures/image (1).png' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'style/images/girl_bench.png' %}" class="d-block w-100" alt="...">
+      </div>
+    </div>
+  </div>
+  <div class="carousel-label">Wilkommen.</div>
+</div>
+
+<hr class="line-divider">
+
+<div class="presentation-wrapper">
+  <div class="presentation-content">
+    <img src="{% static 'style/images/worker.png' %}" class="presentation-image" alt="Antique Furniture">
+    <div class="presentation-text right">
+      <h2><i>Möbelrestauration mit Leidenschaft und Präzision</i></h2>
+      <p>Seit über 40 Jahren widmet sich Thomas Hölzli mit höchstem handwerklichem Können der Restauration von Möbeln. Mit einem geschulten Auge für Details, großer Sorgfalt und tiefem Verständnis für historische Materialien haucht er alten Stücken neues Leben ein.</p>
+      <span class="separator-dot">•</span>
+    </div>
+  </div>
+
+  <div class="presentation-content">
+    <div class="presentation-text left">
+      <h2><i>Meisterhafte Handarbeit</i></h2>
+      <p>Mit viel Liebe zum Detail – unsere Möbel werden von Hand gefertigt und mit höchster Präzision restauriert. Jedes Stück ist ein Unikat, das durch echte Handwerkskunst und Sorgfalt zum Leben erweckt wird.</p>
+      <span class="separator-dot">•</span>
+    </div>
+    <img src="{% static 'style/images/handwork.png' %}" class="presentation-image" alt="Antique Furniture">
+  </div>
+
+  <div class="presentation-content">
+    <img src="{% static 'style/images/lieferung.png' %}" class="presentation-image" alt="Antique Furniture">
+    <div class="presentation-text right">
+      <h2><i>Lieferung persönlich & zuverlässig</i></h2>
+      <p>Ihr restauriertes Möbelstück wird auf Wunsch sicher und persönlich von Thomas Hölzli selbst geliefert – mit dem gleichen Anspruch an Sorgfalt und Qualität wie bei der Restauration</p>
+    </div>
+  </div>
+</div>
+
+<hr class="line-divider">
+
+<div class="choice-wrapper">
+  <img src="{% static 'style/images/girl_bench.png' %}" alt="Background">
+  <div class="buttons-overlay">
+    <a href="{% url 'leistungen' %}" class="button-link">Leistungen</a>
+    <a href="{% url 'gallerie' %}" class="button-link">Gallerie</a>
+  </div>
+</div>
+{% endblock %}

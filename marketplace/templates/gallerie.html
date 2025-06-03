@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Gallerie | Antik Hoelzli{% endblock %}
+
+{% block content %}
+<div class="gallerie-image">
+  <img src="{% static 'style/images/furnitures/barockmoebel.jpg' %}" alt="Barockmöbel" />
+  <div class="gallerie-label">Gallerie.</div>
+</div>
+
+<div class="sorting-container">
+  <button type="button" class="btn btn-sorting">Price Range</button>
+  <div class="dropdown">
+    <button class="btn btn-sorting dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Dropdown button</button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li><a class="dropdown-item" href="#">Action</a></li>
+      <li><a class="dropdown-item" href="#">Another action</a></li>
+      <li><a class="dropdown-item" href="#">Something else here</a></li>
+    </ul>
+  </div>
+  <button type="button" class="btn btn-sorting">Year</button>
+</div>
+
+<div class="gallerie-items-container">
+  {% for item in items %}
+  <a href="{% url 'furniture_detail' item.id %}" class="furniture-link">
+    <div class="card card-horizontal" style="width: 100%">
+      <div class="image-wrapper-product">
+        <img src="{{ item.image.url }}" alt="{{ item.title }}">
+      </div>
+      <div class="text-content">
+        <div class="card-body">
+          <h5 class="card-title">{{ item.title }}</h5>
+          <p class="card-text"><strong>Age:</strong> {{ item.age }}</p>
+          <p class="card-text"><strong>Price:</strong> €{{ item.price }}</p>
+          <p class="card-text"><strong>Dimensions:</strong> {{ item.dimensions }}</p>
+          <p class="card-text">{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+<div class="choice-wrapper">
+  <img src="{% static 'style/images/girl_bench.png' %}" alt="Background">
+  <div class="buttons-overlay">
+    <a href="{% url 'leistungen' %}" class="button-link">Leistungen</a>
+    <a href="{% url 'fragen' %}" class="button-link">Frage und Angebote</a>
+  </div>
+</div>
+{% endblock %}

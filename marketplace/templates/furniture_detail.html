@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ furniture.title }} | Antik Hoelzli{% endblock %}
+
+{% block content %}
+<div class="furniture-detail-container">
+  <div class="furniture-detail-image">
+    <img src="{{ furniture.image.url }}" alt="{{ furniture.title }}">
+  </div>
+  <div class="furniture-detail-info">
+    <h1>{{ furniture.title }}</h1>
+    <p><strong>Age:</strong> {{ furniture.age }}</p>
+    <p><strong>Price:</strong> €{{ furniture.price }}</p>
+    <p><strong>Dimensions:</strong> {{ furniture.dimensions }}</p>
+    <p>{{ furniture.description }}</p>
+    <a href="{% url 'gallerie' %}">← Back to Gallery</a>
+  </div>
+</div>
+{% endblock %}

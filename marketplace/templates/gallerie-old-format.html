@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Gallerie | Antik Hoelzli{% endblock %}
+
+{% block content %}
+<div class="gallerie-image">
+  <img src="{% static 'style/images/furnitures/barockmoebel.jpg' %}" alt="Barockmöbel" />
+  <div class="gallerie-label">Gallerie.</div>
+</div>
+
+<div class="sorting-container">
+  <button type="button" class="btn btn-sorting">Price Range</button>
+  <div class="dropdown">
+    <button class="btn btn-sorting dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Dropdown button</button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li><a class="dropdown-item" href="#">Action</a></li>
+      <li><a class="dropdown-item" href="#">Another action</a></li>
+      <li><a class="dropdown-item" href="#">Something else here</a></li>
+    </ul>
+  </div>
+  <button type="button" class="btn btn-sorting">Year</button>
+</div>
+
+<div class="gallerie-items-container">
+  {% for i in '1234'|make_list %}
+  <div class="card card-horizontal" style="width: 100%">
+    <div class="image-wrapper-product">
+      <img src="{% static 'style/images/furnitures/image (8).png' %}" alt="..." />
+    </div>
+    <div class="text-content">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">In principio rerum, cum homines pacem inter se colere vellent...</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+  <div class="card card-horizontal" style="width: 100%">
+    <div class="image-wrapper-product">
+      <img src="{% static 'style/images/furnitures/image (9).png' %}" alt="..." />
+    </div>
+    <div class="text-content">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">800€</p>
+        <p class="card-text">In principio rerum, cum homines pacem inter se colere vellent...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="choice-wrapper">
+  <img src="{% static 'style/images/girl_bench.png' %}" alt="Background">
+  <div class="buttons-overlay">
+    <a href="{% url 'leistungen' %}" class="button-link">Leistungen</a>
+    <a href="{% url 'fragen' %}" class="button-link">Frage und Angebote</a>
+  </div>
+</div>
+{% endblock %}
