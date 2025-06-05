@@ -27,12 +27,13 @@
   </div>
   {% endfor %}
 </div>
+<span class="separator-dot-choice-wrapper" >♦</span>
 
 <div class="choice-wrapper">
-  <img src="{% static 'style/images/girl_bench.png' %}" alt="Background">
+  <img src="{% static 'style/images/panorama/lea_thomas/lea_thomas_bg_grey.png' %}" alt="Background">
   <div class="buttons-overlay">
+    <a href="{% url 'gallerie' %}" class="button-link">Leistungen</a>
     <a href="{% url 'fragen' %}" class="button-link">Frage und Angebote</a>
-    <a href="{% url 'gallerie' %}" class="button-link">Gallerie</a>
   </div>
 </div>
 {% endblock %}

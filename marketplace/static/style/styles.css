@@ -126,6 +126,13 @@ header.scrolled-up {
   }
 }
 
+.separator-dot-choice-wrapper {
+    display: inline-block;
+    margin: 0 8px;
+    font-size: 25px;
+    color: var(--contrast-color);
+  }
+
 .my-carousel-wrapper {
   margin : 20px auto; /* centers the carousel */
   position : relative;
@@ -210,8 +217,9 @@ font-size: clamp(
   font-size: 1.3em;
 }
 
-.presentation-text.right {
+.presentation-text.right p {
   text-align: right;
+  margin : 0px;
 }
 
 .presentation-text.left {
@@ -301,14 +309,16 @@ font-size: clamp(
   }
   
 .choice-wrapper img {
-    filter: blur(5px);
+    
     width: 100%;
-    margin-top : 20px;
+     filter: blur(0px);
+  transition: filter 0.2s ease;
+  border-radius: 4px;
   }
   
   .buttons-overlay {
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -345,6 +355,7 @@ font-size: clamp(
     height: 100%;
     object-fit: cover;
     filter: blur(5px);
+    transition: filter 0.2s ease;
 }
 
 .gallerie-label {
@@ -401,6 +412,13 @@ font-size: clamp(
   gap: 1rem;
   width: 60%;
   margin-top: 20px;
+  margin-bottom : 10px;
+}
+
+@media (min-width: 601px) {
+  .gallerie-items-container {
+    margin-bottom: 0;
+  }
 }
 
 .image-container {
@@ -603,6 +621,14 @@ font-size: clamp(
 
   .choice-wrapper {
     width: 100vw;
+    
+  }
+
+  .choice-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 0px;
+    margin-top : 10px;
   }
 
   .sorting-container {
@@ -628,6 +654,7 @@ font-size: clamp(
   .gallerie-items-container > .card {
     margin: 0px;
   }
+  
 
   .gallerie-item {
     display: flex;
@@ -637,6 +664,8 @@ font-size: clamp(
   border-radius: 4px;
 
 }
+
+
 
 .gallerie-item > img {
   /* force the image to have the aspect ratio of 5:3 */
@@ -777,9 +806,11 @@ gap: 40px;
   .buttons-overlay a {
     padding: 0.7em 3vw;
     gap: 1.5em;
+   
   } 
   .buttons-overlay {
-    gap: 1em;
+    gap: 2em;
+    top: 80%;
   }
   .contact-container, .gallerie-image, .my-carousel-wrapper{
     margin-top: var(--margin-between-nav);
