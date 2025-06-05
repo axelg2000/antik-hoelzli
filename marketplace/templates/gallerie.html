@@ -24,22 +24,23 @@
 
 <div class="gallerie-items-container">
   {% for item in items %}
-  <a href="{% url 'furniture_detail' item.id %}" class="furniture-link">
-    <div class="card card-horizontal" style="width: 100%">
-      <div class="image-wrapper-product">
-        <img src="{{ item.image.url }}" alt="{{ item.title }}">
-      </div>
-      <div class="text-content">
-        <div class="card-body">
-          <h5 class="card-title">{{ item.title }}</h5>
-          <p class="card-text"><strong>Age:</strong> {{ item.age }}</p>
-          <p class="card-text"><strong>Price:</strong> €{{ item.price }}</p>
-          <p class="card-text"><strong>Dimensions:</strong> {{ item.dimensions }}</p>
-          <p class="card-text">{{ item.description }}</p>
+  <div class="card-container" style="position: relative;">
+    <a href="{% url 'furniture_detail' item.id %}" class="card-link">
+      <div class="card card-horizontal" style="width: 100%;">
+        <div class="image-container" style="background-image: url('{{ item.image.url }}');"></div>
+        <div class="text-content">
+          <div class="card-body">
+            <h5 class="card-title">{{ item.title }}</h5>
+            <p class="card-text"><strong>Age:</strong> {{ item.age }}</p>
+            <p class="card-text"><strong>Dimensions:</strong> {{ item.dimensions }}</p>
+            <p class="card-text price-text"><strong>{{ item.price }} €</strong></p>
+          </div>
         </div>
       </div>
-    </div>
-  </a>
+    </a>
+    <!-- Outside the main link: Fragen & Angebote -->
+    <a href="{% url 'fragen' %}" class="card-link-button">Fragen & Angebote</a>
+  </div>
   {% endfor %}
 </div>
 
