@@ -132,7 +132,7 @@ header.scrolled-up {
   width : 100%;
 }
 
-.carousel-item  img {
+.my-carousel-wrapper .carousel-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -273,6 +273,7 @@ font-size: clamp(
     footer {
       text-align: center;
       align-items: center;
+      margin-top : 0px;
     }
   }
 
@@ -295,14 +296,14 @@ font-size: clamp(
 
 .choice-wrapper {
     position: relative;
-    width: var(--width-wrapper)   ;      /* or any fixed width like 80% */
+    width: var(--width-wrapper);      /* or any fixed width like 80% */
     overflow: hidden;
-    margin: 20px auto;    /* centers it horizontally */
   }
   
 .choice-wrapper img {
     filter: blur(5px);
-    width: 110%;
+    width: 100%;
+    margin-top : 20px;
   }
   
   .buttons-overlay {
@@ -348,14 +349,27 @@ font-size: clamp(
 
 .gallerie-label {
   position: absolute;
-    bottom: 2vw; /* Adjust to taste */
+    top: 2vw; /* Adjust to taste */
+  left: 2vw;
+  color: var(--contrast-color);
+  font-size: clamp(
+    var(--font-size-min),
+    var(--font-size-ideal),
+    var(--font-size-max)
+  );
+}
+
+.leistungen-label {
+  position: absolute;
+    top: 2vw; /* Adjust to taste */
   right: 2vw;
   color: var(--contrast-color);
   font-size: clamp(
     var(--font-size-min),
     var(--font-size-ideal),
     var(--font-size-max)
-  );}
+  );
+}
 
 .sorting-container {
   display: flex;
@@ -528,7 +542,7 @@ font-size: clamp(
 
 
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .gallerie-items-container {
     flex-direction: column;
     gap: 0rem;
@@ -588,7 +602,7 @@ font-size: clamp(
   }
 
   .choice-wrapper {
-    width: 98vw;
+    width: 100vw;
   }
 
   .sorting-container {
@@ -612,15 +626,13 @@ font-size: clamp(
 
 @media (max-width: 600px) {
   .gallerie-items-container > .card {
-margin : 0px;
-  };
+    margin: 0px;
+  }
 
-
-
-.gallerie-item {
-  display: flex;
-  flex-wrap: wrap; /* Allows text to move below image if needed */
-  width: 80vw; /* Full width of the container */
+  .gallerie-item {
+    display: flex;
+    flex-wrap: wrap; /* Allows text to move below image if needed */
+    width: 80vw; /* Full width of the container */
   background-color: rgba(240, 241, 244, 0.93);
   border-radius: 4px;
 
@@ -681,17 +693,7 @@ margin : 0px;
 }
 
 
-.leistungen-label {
-  position: absolute;
-  top: 2vw; /* Adjust to taste */
-  right: 2vw;
-  color: white;
-  font-size: clamp(
-    2rem,
-    var(--font-size-ideal),
-    var(--font-size-max)
-  );  white-space: nowrap;
-}
+
 
 .leistungen-wrapper{
   display : flex;
@@ -729,7 +731,6 @@ margin : 0px;
 
 .leistungen-title {
   margin-bottom: 20px;
-
   font-size : 1.4em;
   text-align :left;
   align-self: center; /* override centering for this item */
@@ -788,4 +789,211 @@ gap: 40px;
 }
 }
 
+.furniture-container {
+    margin-top: 30px;;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: var(--width-wrapper);
+  gap : 20px;
+  background-color:#ffffff;
+  padding: 20px;
+  border-radius: 4px;
+  width : 70%;
+}
 
+.furniture-details-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  width: 100%;
+  gap: 20px;
+}
+
+
+.furniture-image img{
+  width: 400px ;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+  border : 1px solid #ccc;
+}
+
+.furniture-choice-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.furniture-image-gallery {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px; /* Space between images */
+  padding: 10px 0;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.furniture-image-gallery::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari */
+}
+
+.gallery-image-wrapper {
+  flex: 0 0 auto; /* Prevent shrinking */
+  width: 200px; /* Consistent width */
+  height: 300px; /* Consistent height */
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.gallery-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Fix container size */
+.furniture-image {
+  width: 400px;     /* or your preferred width */
+  height: 600px;    /* consistent height */
+  overflow: hidden;
+  flex-shrink: 0;   /* prevents shrinking in flexbox layouts */
+}
+
+.furniture-carousel-inner img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  /* no blur! */
+}
+
+/* Mobile: switch to column layout and reorder */
+@media (max-width: 768px) {
+  .furniture-details-container {
+    flex-direction: column;
+  }
+  .furniture-container{
+    background-color: #f5f5f5;
+    margin-top: 80px;
+    color : black;
+    width : 400px;
+    gap : 0px;
+    margin-top: 100px;
+
+  }
+  .furniture-image img{
+    border : none; /* remove border on mobile */
+}
+.furniture-details-container{
+  gap : 0px;
+  margin-bottom : 20px;
+}
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%); /* Inverts white to black */
+}
+
+
+.furniture-image .carousel-inner,
+.furniture-image .carousel-item {
+  border-radius: 4px; /* match the image radius! */
+  overflow: hidden;   /* ensure no corners show during transitions */
+}
+
+.furniture-title {
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--contrast-color);
+
+}
+
+.furniture-text-details{
+  font-size: 1.4em;
+  color: var(--contrast-color);
+  margin-top: 20px;
+}
+
+.my-custom-contact {
+  background-color: var(--contrast-color);
+  color: white;
+  border: none; /* pour supprimer la bordure */
+}
+
+.my-custom-contact:hover {
+  background-color: var(--background-color); /* couleur au survol */
+    color: white;
+
+}
+
+.my-button-return {
+  background-color: var(--background-color);
+  color: white;
+  border: none; /* pour supprimer la bordure */
+}
+
+.my-button-return:hover {
+  background-color: var(--contrast-color); /* couleur au survol */
+    color: white;
+
+}
+
+
+
+/* test */
+
+.other-furnitures-container {
+  margin-top: 2rem;
+}
+
+
+
+.other-furnitures-list {
+  display: flex;
+  flex-direction: column; /* Ici la clé ! */
+  background-color: #f5f5f5;
+  border-radius : 4px;
+}
+
+.other-furniture-card {
+  flex: 1;
+  overflow: hidden;
+  text-align: center;
+  display : flex;
+  flex-direction: column;
+  border-bottom : 1px solid #ccc; /* Ligne de séparation */
+
+}
+
+.other-furniture-card:last-child {
+  border-bottom: none; /* pas de trait pour la dernière carte */
+}
+
+.other-furniture-card img {
+  width: 200px;
+  height: auto;
+}
+
+
+.other-furniture-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--contrast-color);
+  margin-bottom: 10px;
+  
+}
+
+.other-furniture-card a {
+  text-decoration: none;
+}
+
+.discover-other-furnitures {
+  text-align: center;
+  font-size: 1.5em;
+  color: var(--contrast-color);
+  margin-bottom : 20px;
+  font-weight: bold;
+}

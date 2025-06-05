@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Furniture
+import random
+
 
 
 # Create your views here.
@@ -20,6 +22,14 @@ def fragen(request):
 
 def furniture_detail(request, id):
     furniture = get_object_or_404(Furniture, id=id)
-    return render(request, 'furniture_detail.html', {'furniture': furniture})
+    
+    # Récupère les autres meubles sauf celui en cours
+    other_furnitures = Furniture.objects.exclude(id=id)
 
+    # Choisis 2 meubles aléatoires
+    random_furnitures = random.sample(list(other_furnitures), min(2, other_furnitures.count()))
 
+    return render(request, 'furniture_detail.html', {
+        'furniture': furniture,
+        'random_furnitures': random_furnitures
+    })

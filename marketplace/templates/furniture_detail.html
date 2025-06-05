@@ -4,17 +4,77 @@
 {% block title %}{{ furniture.title }} | Antik Hoelzli{% endblock %}
 
 {% block content %}
-<div class="furniture-detail-container">
-  <div class="furniture-detail-image">
-    <img src="{{ furniture.image.url }}" alt="{{ furniture.title }}">
+<div class="furniture-container">
+  <!-- Title always at the top -->
+  <div class="furniture-title">{{ furniture.title }}</div>
+
+  <!-- Only image and text details in the flex container -->
+  <div class="furniture-details-container">
+    <!-- Image / Carousel -->
+    <div class="furniture-image">
+      <div id="furnitureCarousel" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-inner">
+          {% if furniture.image %}
+          <div class="carousel-item active">
+            <img src="{{ furniture.image.url }}" alt="{{ furniture.title }}">
+          </div>
+          {% endif %}
+
+          {% for image in furniture.images.all %}
+          <div class="carousel-item {% if not furniture.image and forloop.first %}active{% endif %}">
+            <img src="{{ image.image.url }}" alt="Additional image of {{ furniture.title }}">
+          </div>
+          {% endfor %}
+        </div>
+
+        {% if furniture.images.count > 0 or furniture.image %}
+        <button class="carousel-control-prev" type="button" data-bs-target="#furnitureCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#furnitureCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Text Details -->
+    <div class="furniture-text-details">
+      <p>Das Möbelstück stammt aus dem Jahr <strong>{{ furniture.age }}</strong><hr></p>
+      <p>Preisschätzung: <strong>{{ furniture.price }} €</strong><hr></p>
+      <p>Die Abmessungen sind: <br> <strong>{{ furniture.dimensions }}</strong><hr></p>
+      <p>{{ furniture.description }}</p>
+    </div>
   </div>
-  <div class="furniture-detail-info">
-    <h1>{{ furniture.title }}</h1>
-    <p><strong>Age:</strong> {{ furniture.age }}</p>
-    <p><strong>Price:</strong> €{{ furniture.price }}</p>
-    <p><strong>Dimensions:</strong> {{ furniture.dimensions }}</p>
-    <p>{{ furniture.description }}</p>
-    <a href="{% url 'gallerie' %}">← Back to Gallery</a>
+
+  <!-- Buttons below -->
+  <div class="furniture-choice-container">
+<a href="{% url 'leistungen' %}" class="btn my-custom-contact">Contact Us</a>    
+<a href="{% url 'gallerie' %}" class="btn my-button-return">Back to Gallery</a>  </div>
+</div>
+
+<!-- Proposition de 2 autres meubles -->
+<div class="other-furnitures-container">
+  <div class="discover-other-furnitures">Das könnte Ihnen auch gefallen</div>
+  <div class="other-furnitures-list">
+    {% for item in random_furnitures %}
+      <div class="other-furniture-card">
+        <a href="{% url 'furniture_detail' item.id %}">
+          <img src="{{ item.image.url }}" alt="{{ item.title }}">
+          <div class="other-furniture-title">{{ item.title }}</div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="choice-wrapper">
+  <img src="{% static 'style/images/girl_bench.png' %}" alt="Background">
+  <div class="buttons-overlay">
+    <a href="{% url 'leistungen' %}" class="button-link">Leistungen</a>
+    <a href="{% url 'fragen' %}" class="button-link">Frage und Angebote</a>
   </div>
 </div>
 {% endblock %}

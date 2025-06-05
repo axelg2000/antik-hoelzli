@@ -5,7 +5,7 @@
 
 {% block content %}
 <div class="gallerie-image">
-  <img src="{% static 'style/images/furnitures/barockmoebel.jpg' %}" alt="Barockmöbel" />
+  <img src="{% static 'style/images/panorama/art/pretty_pepper_books.png' %}" alt="Barockmöbel" />
   <div class="gallerie-label">Gallerie.</div>
 </div>
 
@@ -27,7 +27,13 @@
   <div class="card-container" style="position: relative;">
     <a href="{% url 'furniture_detail' item.id %}" class="card-link">
       <div class="card card-horizontal" style="width: 100%;">
-        <div class="image-container" style="background-image: url('{{ item.image.url }}');"></div>
+        {% if item.images.first %}
+          <div class="image-container" style="background-image: url('{{ item.images.first.image.url }}');"></div>
+        {% else %}
+          <div class="image-container" style="background-color: #eee; text-align: center; display: flex; align-items: center; justify-content: center; height: 200px;">
+            No image available
+          </div>
+        {% endif %}
         <div class="text-content">
           <div class="card-body">
             <h5 class="card-title">{{ item.title }}</h5>
@@ -38,14 +44,12 @@
         </div>
       </div>
     </a>
-    <!-- Outside the main link: Fragen & Angebote -->
-    <a href="{% url 'fragen' %}" class="card-link-button">Fragen & Angebote</a>
   </div>
   {% endfor %}
 </div>
 
 <div class="choice-wrapper">
-  <img src="{% static 'style/images/girl_bench.png' %}" alt="Background">
+  <img src="{% static 'style/images/panorama/lea_thomas/ai_lea_table.png' %}" alt="Background">
   <div class="buttons-overlay">
     <a href="{% url 'leistungen' %}" class="button-link">Leistungen</a>
     <a href="{% url 'fragen' %}" class="button-link">Frage und Angebote</a>
