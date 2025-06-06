@@ -1,0 +1,48 @@
+# Python
+*.pyc
+__pycache__/
+
+# Virtual environment
+venv/
+
+# Environment variables
+.env
+
+# macOS system files
+.DS_Store
+
+# Django static and media files
+staticfiles/
+media/
+
+# VS Code / IDE settings
+.vscode/
+.idea/
+
+# Heroku build artifacts
+*.log
+
+# Compiled translations
+*.mo
+
+# Coverage reports
+htmlcov/
+.coverage
+
+# Byte-compiled / optimized / DLL files
+*.pyd
+*.so
+
+# Backup files
+*.bak
+*.swp
+*.swo
+*~.nib
+
+# Database
+*.sqlite3
+
+# Node modules (if used)
+node_modules/
+
+# Optional: Add your custom folders if needed
