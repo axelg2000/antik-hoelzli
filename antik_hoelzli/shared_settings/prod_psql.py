@@ -18,7 +18,7 @@ AWS_QUERYSTRING_AUTH = False
 # Optional: set default ACL to public-read
 AWS_DEFAULT_ACL = 'public-read'
 
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = [os.getenv('PRODUCTION_HOST', 'yourdomain.com')]
 
 # Use Heroku DATABASE_URL if available, fallback to env vars
