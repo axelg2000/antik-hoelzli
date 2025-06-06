@@ -1,0 +1,1 @@
+web: gunicorn antik_hoelzli.wsgi
