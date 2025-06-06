@@ -14,6 +14,7 @@ venv/
 # Django static and media files
 staticfiles/
 media/
+antik_hoelzli/media/
 
 # VS Code / IDE settings
 .vscode/
