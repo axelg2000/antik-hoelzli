@@ -1,16 +1,15 @@
 from .base import *
 import os
+from pathlib import Path
 
 DEBUG = False
 ALLOWED_HOSTS = [os.getenv('PRODUCTION_HOST', 'yourdomain.com')]
 
+BASE_DIR = Path(__file__).resolve().parent.parent.parent  # Adjust if needed
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB', 'antik_hoelzli'),
-        'USER': os.getenv('POSTGRES_USER', 'axel'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'DB38920Crolles.'),
-        'HOST': os.getenv('POSTGRES_HOST', 'localhost'),
-        'PORT': os.getenv('POSTGRES_PORT', '5432'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
