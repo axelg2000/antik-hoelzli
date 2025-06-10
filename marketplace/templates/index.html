@@ -5,58 +5,112 @@
 {% block title %}Home | Antik Hoelzli{% endblock %}
 
 {% block content %}
-<div class="my-carousel-wrapper">
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1500">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="{% static 'style/images/furnitures/image (1).png' %}" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="{% static 'style/images/girl_bench.png' %}" class="d-block w-100" alt="...">
-      </div>
-    </div>
-  </div>
-  <div class="carousel-label">Wilkommen.</div>
-</div>
-
-<span class="separator-dot-choice-wrapper" >♦</span>
-
-<div class="presentation-wrapper">
-  <div class="presentation-content">
-    <img src="{% static 'style/images/worker.png' %}" class="presentation-image" alt="Antique Furniture">
-    <div class="presentation-text right">
-      <h2><i>Möbelrestauration mit Leidenschaft und Präzision</i></h2>
-      <p>Seit über 40 Jahren widmet sich Thomas Hölzli mit höchstem handwerklichem Können der Restauration von Möbeln. Mit einem geschulten Auge für Details, großer Sorgfalt und tiefem Verständnis für historische Materialien haucht er alten Stücken neues Leben ein.</p>
-      <span class="separator-dot">♦</span>
-    </div>
+<div class="index-container">
+  <img src="{% static 'style/images/clock.jpg' %}" class="d-block w-100" alt="Antikes Möbelstück">
+  
+  <div class="index-label">Antik Hoelzli</div>
+  
+  <div class="index-text">
+    <p>Ihr Experte für Möbelrestauration und -verkauf</p>
+    <p>Seit über 40 Jahren Leidenschaft für antike Möbel</p>
+    <p>Besuchen Sie uns in unserem Geschäft in Zürich</p>
+    <p>Kontaktieren Sie uns für individuelle Restaurationen</p>
   </div>
 
-  <div class="presentation-content">
-    <div class="presentation-text left">
-      <h2><i>Meisterhafte Handarbeit</i></h2>
-      <p>Mit viel Liebe zum Detail – unsere Möbel werden von Hand gefertigt und mit höchster Präzision restauriert. Jedes Stück ist ein Unikat, das durch echte Handwerkskunst und Sorgfalt zum Leben erweckt wird.</p>
-      <span class="separator-dot">♦</span>
-    </div>
-    <img src="{% static 'style/images/handwork.png' %}" class="presentation-image" alt="Antique Furniture">
-  </div>
-
-  <div class="presentation-content">
-    <img src="{% static 'style/images/lieferung.png' %}" class="presentation-image" alt="Antique Furniture">
-    <div class="presentation-text right">
-      <h2><i>Lieferung persönlich & zuverlässig</i></h2>
-      <p>Ihr restauriertes Möbelstück wird auf Wunsch sicher und persönlich von Thomas Hölzli selbst geliefert – mit dem gleichen Anspruch an Sorgfalt und Qualität wie bei der Restauration</p>
-    </div>
+  <div class="index-btn-wrapper">
+    <a href="{% url 'fragen' %}" class="index-btn">Zu unseren Fragen</a>
   </div>
 </div>
 
-<span class="separator-dot-choice-wrapper" >♦</span>
+<div class="thomas-presentation-container">
+  <div class="background-square">
+    <div class="thomas-presentation-text">
+      <h2>Thomas Hoelzli</h2>
+      <p>Handwerker aus Leidenschaft
+Thomas Hoelzli ist ein leidenschaftlicher Handwerker, der das Handwerk von seinem Vater gelernt hat. Mit großer Sorgfalt und Hingabe liefert er seine Arbeiten in ganz Europa aus.</p>
+      <a href="#" class="thomas-presentation-btn">Lernen Sie uns kennen</a>
+    </div>
+  </div>
 
-
-<div class="choice-wrapper">
-  <img src="{% static 'style/images/girl_bench.png' %}" alt="Background">
-  <div class="buttons-overlay">
-    <a href="{% url 'leistungen' %}" class="button-link">Leistungen</a>
-    <a href="{% url 'gallerie' %}" class="button-link">Gallerie</a>
+  <div class="thomas-presentation-overlay-image">
+    <img src="{% static 'style/images/thomas_frame2.jpg' %}" alt="Overlay Image">
   </div>
 </div>
+
+<h2>Unsere Leistungen im Überblick</h2>
+<hr class="line-divider">
+
+<div class="wrapper-boxes">
+  <div class="box">
+    <img src="{% static 'style/images/flaticon/build.png' %}" alt="Small Image 1">
+    <h4>Title 1</h4>
+    <p>Short description for box 1.hort description for box 1.hort description for box 1.hort description for box 1.</p>
+  </div>
+
+  <div class="box">
+    <img src="{% static 'style/images/flaticon/home-repair.png' %}" alt="Small Image 2">
+    <h4>Title 2</h4>
+    <p>Short description for box 2.</p>
+  </div>
+
+  <div class="box">
+    <img src="{% static 'style/images/flaticon/wiping.png' %}" alt="Small Image 3">
+    <h4>Title 3</h4>
+    <p>Short description for box 3.</p>
+  </div>
+
+  <div class="box">
+    <img src="{% static 'style/images/flaticon/furniture.png' %}" alt="Small Image 4">
+    <h4>Title 4</h4>
+    <p>Short description for box 4.</p>
+  </div>
+
+  <div class="box">
+    <img src="{% static 'style/images/flaticon/consulting.png' %}" alt="Small Image 5">
+    <h4>Title 5</h4>
+    <p>Short description for box 5.</p>
+  </div>
+
+    <div class="box">
+    <img src="{% static 'style/images/flaticon/delivery.png' %}" alt="Small Image 4">
+    <h4>Title 4</h4>
+    <p>Short description for box 4.</p>
+  </div>
+</div>
+
+<div class="bottom-container">
+  <div class="background-square">
+    <div class="bottom-text">
+      <h2>Außergewöhnliche Stücke</h2>
+      <p>In unserem Sortiment finden Sie immer wieder außergewöhnliche und einzigartige Möbelstücke mit Geschichte und Charakter.</p>
+      <a href="{% url 'gallerie' %}" class="bottom-btn">Gallerie ansehen</a>
+    </div>
+  </div>
+
+  <div class="bottom-overlay-image">
+    <img src="{% static 'style/images/furnitures/chair_pepper.JPG' %}" alt="Overlay Image">
+  </div>
+</div>
+
+<!-- <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const boxes = document.querySelectorAll('.box');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target); // Stop observing once it's visible
+        }
+      });
+    }, {
+      threshold: 0.1 // Trigger when 10% of the box is visible
+    });
+
+    boxes.forEach(box => {
+      observer.observe(box);
+    });
+  });
+</script> -->
+
 {% endblock %}
