@@ -10,7 +10,7 @@ class FurnitureImageInline(admin.TabularInline):
 # Furniture admin setup
 class FurnitureAdmin(admin.ModelAdmin):
     inlines = [FurnitureImageInline]
-    list_display = ('title', 'price', 'age')
+    list_display = ('title', 'price', 'category')  # ✅ Removed 'age', replaced with 'category' or another field
 
 # Register the admin
 admin.site.register(Furniture, FurnitureAdmin)
