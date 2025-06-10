@@ -1,0 +1,27 @@
+ad_files:
+  - "./ads/*.yaml"
+
+login:
+  username: "giretaxel@gmail.com"
+  password: "KLEINANZEIGEN38920Crolles."
+
+ad_defaults:
+  active: true
+  type: OFFER
+  price_type: NEGOTIABLE
+  shipping_type: SHIPPING
+  contact:
+    name: "Axel"
+    phone: "15563056052"
+    zipcode: "10437"
+
+publishing:
+  delete_old_ads: AFTER_PUBLISH
+  delete_old_ads_by_title: true
+
+browser:
+  arguments:
+    - --remote-debugging-port=9222
+  use_private_window: true
+
+
