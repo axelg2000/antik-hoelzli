@@ -1,1 +1,1 @@
-web: gunicorn antik_hoelzli.wsgi
+web: gunicorn antik_hoelzli.wsgi:application --log-file -
